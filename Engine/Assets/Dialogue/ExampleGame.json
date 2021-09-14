@@ -1,0 +1,100 @@
+[
+    {
+        "characters": [
+            "Player",
+            "Jess",
+            "Rachel",
+            "Ted"
+        ],
+        "connections": [
+            {
+                "from": "START",
+                "from_port": 0,
+                "to": "5793386",
+                "to_port": 0
+            },
+            {
+                "from": "5793386",
+                "from_port": 0,
+                "to": "2723245",
+                "to_port": 0
+            }
+        ],
+        "editor_version": "3.2.3",
+        "file_name": "ExampleGame",
+        "languages": [
+            "ENG"
+        ],
+        "nodes": [
+            {
+                "filename": "res://Nodes/Start.tscn",
+                "next": "5793386",
+                "node_name": "START",
+                "node_type": "start",
+                "offset": [
+                    485,
+                    103
+                ],
+                "title": ""
+            },
+            {
+                "character": [
+                    "Ted",
+                    3
+                ],
+                "expand": null,
+                "expand_size": [
+                    0,
+                    0
+                ],
+                "file": "",
+                "filename": "res://Nodes/Show Message.tscn",
+                "is_box": true,
+                "next": "2723245",
+                "node_name": "5793386",
+                "node_type": "show_message",
+                "object_path": "",
+                "offset": [
+                    873.000244,
+                    -83.250061
+                ],
+                "slide_camera": true,
+                "speaker_type": 0,
+                "text": {
+                    "ENG": "Oh hi, I didn't notice you there. Ah shit..."
+                },
+                "title": "Show Message"
+            },
+            {
+                "character": [
+                    "Ted",
+                    3
+                ],
+                "expand": "[GraphNode:56432]",
+                "expand_size": [
+                    0,
+                    0
+                ],
+                "file": "",
+                "filename": "res://Nodes/Show Message.tscn",
+                "is_box": true,
+                "next": null,
+                "node_name": "2723245",
+                "node_type": "show_message",
+                "object_path": "",
+                "offset": [
+                    1561.000244,
+                    -87.250061
+                ],
+                "slide_camera": true,
+                "speaker_type": 0,
+                "text": {
+                    "ENG": "I'm not a good writer so we're going to just show you around."
+                },
+                "title": "Show Message"
+            }
+        ],
+        "selected_language": "ENG",
+        "variables": {}
+    }
+]
