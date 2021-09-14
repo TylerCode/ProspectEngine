@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "state.h": "c",
+        "dialogbox.h": "c",
+        "sdl.h": "c"
+    }
+}
