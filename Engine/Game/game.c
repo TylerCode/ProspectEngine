@@ -15,17 +15,21 @@
 
 void DrawMainScreen(void);
 void DrawMenu(void);
+bool Initialize(void);
+
+SDL_Window *window = NULL;
+SDL_Renderer *renderer = NULL;
+State gameState;
 
 int game(void)
 {
-    SDL_Window *window = NULL;
-
-    SDL_Renderer *renderer = NULL;
-
     bool quit = false;
-    State gameState;
-
     gameState.state = 0;
+
+    if(!Initialize())
+    {
+        exit(1);
+    }
 
     while(!quit)
     {
@@ -37,11 +41,43 @@ int game(void)
         {
             DrawMainScreen();
         }
-
-        break;
     }
 
     return 0;
+}
+
+bool Initialize(void)
+{
+    //Gets graphics shit ready
+    if (SDL_Init(SDL_INIT_VIDEO) != 0)
+    {
+        fprintf(stderr,
+            "What the cinnamon toast fuck is this? No compatible graphics?!!\nHere is your stupid error: ",
+            SDL_GetError());
+        printf(SDL_GetError());
+        return false;
+    }
+
+    window = SDL_CreateWindow("Game",
+        SDL_WINDOWPOS_CENTERED,
+        SDL_WINDOWPOS_CENTERED,
+        1280,
+        720,
+        SDL_WINDOW_SHOWN);
+
+    if(!window)
+    {
+        return false;
+    }
+
+    renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
+
+    if(!renderer)
+    {
+        return false;
+    }
+
+    return true;
 }
 
 void DrawMainScreen(void)
@@ -56,7 +92,7 @@ void DrawMainScreen(void)
 
 void DrawMenu(void)
 {
-    std::cout << "Draw Menu\n";
+    //std::cout << "Draw Menu\n";
     // Draw the background
     // Draw the text box
     // Draw the buttons
